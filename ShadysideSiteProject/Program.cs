@@ -1,4 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
+// Registering custom SpotifyService and giving it a dedicated HttpClient
+builder.Services.AddHttpClient<ShadysideSiteProject.Services.SpotifyService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

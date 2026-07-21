@@ -9,6 +9,16 @@
    <h1 class="display-4 fw-bold">Music</h1>
    <p class="lead">Track previews are loading...</p>
 
+   <!-- Temporary check to ensure API connection works as expected -->
+   @if (ViewBag.AccessToken != null)
+    {
+        <div class="alert alert-success mt-3" role="alert">
+            <strong>Connection Successful!</strong> Token generated: <br/>
+            <small class="text-break">@ViewBag.SpotifyToken</small>
+        </div>
+    }
+
    <!-- We will inject the Spotify cards here -->
-   <div id="spotify-container" class="mt-4"></div>
+   <div id="spotify-container" class="mt-4">
+   </div>
 </div>
