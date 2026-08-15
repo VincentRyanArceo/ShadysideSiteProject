@@ -1,24 +1,25 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
     ViewData["Title"] = "Music";
 }
 
-<div class="text-center mt-5">
-   <h1 class="display-4 fw-bold">Music</h1>
-   <p class="lead">Track previews are loading...</p>
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold">Music</h1>
+        <p class="lead text-muted">Stream Shadyside directly on Spotify</p>
+    </div>
 
-   <!-- Temporary check to ensure API connection works as expected -->
-   @if (ViewBag.AccessToken != null)
-    {
-        <div class="alert alert-success mt-3" role="alert">
-            <strong>Connection Successful!</strong> Token generated: <br/>
-            <small class="text-break">@ViewBag.SpotifyToken</small>
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <!-- Spotify Official Embed Widget -->
+            <iframe style="border-radius:12px" 
+                    src="https://open.spotify.com/embed/artist/1lyXagmnPtEFA2PcjXDsLg?utm_source=generator&theme=0" 
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+            </iframe>
         </div>
-    }
-
-   <!-- We will inject the Spotify cards here -->
-   <div id="spotify-container" class="mt-4">
-   </div>
+    </div>
 </div>

@@ -3,15 +3,21 @@ using System.Text.Json.Serialization;
 
 namespace ShadysideSiteProject.Models
 {
-    // 1. This represents the outmost JSON object Spotify sends back
-    public class  SpotifyTracksResponse
+    // 1. The outermost response from the Search API
+    public class SpotifySearchResponse
     {
         [JsonPropertyName("tracks")]
-        public List<SpotifyTrack> Tracks { get; set; } = new List<SpotifyTrack>();
-        
+        public SpotifyTracksContainer? Tracks { get; set; }
     }
 
-    // 2. This represents an individual song
+    // 2. The container that holds the list of items
+    public class SpotifyTracksContainer
+    {
+        [JsonPropertyName("items")]
+        public List<SpotifyTrack> Items { get; set; } = new List<SpotifyTrack>();
+    }
+
+    // 3. This represents an individual song
     public class SpotifyTrack
     {
         [JsonPropertyName("name")]
@@ -22,14 +28,14 @@ namespace ShadysideSiteProject.Models
         public SpotifyAlbum? Album { get; set; }
     }
 
-    // 3. This holds the albu, data attached to the song
+    // 4. This holds the album data attached to the song
     public class SpotifyAlbum
     {
         [JsonPropertyName("images")]
         public List<SpotifyImage> Images { get; set; } = new List<SpotifyImage>();
     }
 
-    // 4. This holds the URL for the album cover art
+    // 5. This holds the URL for the album cover art
     public class SpotifyImage
     {
         [JsonPropertyName("url")]

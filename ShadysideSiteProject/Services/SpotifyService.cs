@@ -48,26 +48,26 @@ namespace ShadysideSiteProject.Services
 
         }
 
-        // We mark it 'async' and return a 'Task' that promises a List of SpotifyTracks
-        public async Task<List<SpotifyTrack>> GetTopTracksAsync(string token, string artistId)
+        // We changed the parameter from artistId to bandName
+        public async Task<List<SpotifyTrack>> GetTopTracksAsync(string token, string bandName)
         {
-            // Prepare the web request to the Spotify Top Tracks endpoint
-            var requestMessage = new HttpRequestMessage(HttpMethod.Get, $"https://api.spotify.com/v1/artists/{artistId}/top-tracks?market=US");
+            // 1. Prepare the web request using the Spotify Search endpoint
+            // We format the query to specifically search for tracks by the artist
+            string query = Uri.EscapeDataString($"artist:{bandName}");
+            var requestMessage = new HttpRequestMessage(HttpMethod.Get, $"https://api.spotify.com/v1/search?q={query}&type=track&limit=10");
+
             requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            // AWAIT: We pause here while the internet request travels to Spotify and back.
-            // The server is free to hanbdle other requests while we wait for the response.
+            // 2. Send the request
             var response = await _httpClient.SendAsync(requestMessage);
             response.EnsureSuccessStatusCode();
 
-            // AWAIT: We pause again because reading a large data stream takes a fraction of a second
+            // 3. Read the stream and deserialize into our new SpotifySearchResponse wrapper
             var responseStream = await response.Content.ReadAsStreamAsync();
+            var result = await JsonSerializer.DeserializeAsync<SpotifySearchResponse>(responseStream);
 
-            // AWAIT: We pause one last time to convert (desterialize) the JSON data into a C# object we can work with.
-            var result = await JsonSerializer.DeserializeAsync<SpotifyTracksResponse>(responseStream);
-
-            //Once everything is done, we return the tracks (or an empty list if nothing was found)
-            return result?.Tracks ?? new List<SpotifyTrack>();
+            // 4. Navigate through the nested objects to return the list of tracks
+            return result?.Tracks?.Items ?? new List<SpotifyTrack>();
         }
 
     }
