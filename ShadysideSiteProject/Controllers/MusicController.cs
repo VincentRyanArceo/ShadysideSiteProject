@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShadysideSiteProject.Services;
+using ShadysideSiteProject.Models;
 
 namespace ShadysideSiteProject.Controllers
 {
@@ -7,22 +8,26 @@ namespace ShadysideSiteProject.Controllers
     {
         private readonly SpotifyService _spotifyService;
 
-        // 1. Dependecy Injection: ASP.NET automatically hands the controller the SpotifyService
+        // Dependency Injection hands the controller the SpotifyService
         public MusicController(SpotifyService spotifyService)
         {
             _spotifyService = spotifyService;
         }
 
-        // 2. Change this to async Task<IActionResult> b/c we are waiting for a web response
+        // The async method waits for the web responses
         public async Task<IActionResult> Index()
         {
-            // 3. Call SpotifyService to get token
-            var accessToken = await _spotifyService.GetAccessTokenAsync();
+            // 1. Call SpotifyServices to get the secure access token
+            var token = await _spotifyService.GetAccessTokenAsync();
 
-            // 4. Pass the access token to the view using ViewBag
-            ViewBag.AccessToken = accessToken;
+            // 2. Define the exact Artist ID we want to query (this is for the band "Shadyside")
+            string artistId = "1lyXagmnPtEFA2PcjXDsLg";
 
-            return View();
+            // 3. Fetch the top tracks using token
+            var tracks = await _spotifyService.GetTopTracksAsync(token, artistId);
+
+            // 4. Pass the list of the tracks directly to the View as its Model
+            return View(tracks);
         }
     }
 }
