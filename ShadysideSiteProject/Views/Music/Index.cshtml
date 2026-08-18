@@ -2,24 +2,71 @@
     ViewData["Title"] = "Music";
 }
 
+<!-- Include Bootstrap Icons CDN for platform icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 <div class="container mt-5">
     <div class="text-center mb-5">
         <h1 class="display-4 fw-bold">Music</h1>
-        <p class="lead text-muted">Stream Shadyside directly on Spotify</p>
+        <p class="lead text-muted">Stream top tracks and watch official music videos</p>
     </div>
 
     <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6">
-            <!-- Spotify Official Embed Widget -->
-            <iframe style="border-radius:12px" 
-                    src="https://open.spotify.com/embed/artist/1lyXagmnPtEFA2PcjXDsLg?utm_source=generator&theme=0" 
-                    width="100%" 
-                    height="352" 
-                    frameBorder="0" 
-                    allowfullscreen="" 
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                    loading="lazy">
-            </iframe>
+        <div class="col-md-8 col-lg-7">
+
+            <!-- 1. Spotify Player -->
+            <div class="mb-4 shadow-sm rounded">
+                <iframe style="border-radius:12px"
+                        src="https://open.spotify.com/embed/artist/1lyXagmnPtEFA2PcjXDsLg?utm_source=generator&theme=0"
+                        width="100"
+                        height="352"
+                        frameBorder="0"
+                        allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy">
+                </iframe>
+            </div>
+
+            <!-- 2. Streaming Link Hub -->
+            <div class="text-center mb-5">
+                <h5 class="fw-bold mb-2">Listen on Your Favorite Platform</h5>
+                <p class="text-muted small mb-3">Available on Apple Music, Amazon, YouTube Music, and more.</p>
+                <a href="https://dthw.sh/higherplans" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-lg px-4 shadow-sm">
+                    <i class="bi bi-music-note-list me-2"></i> Open All Streaming Links
+                </a>
+            </div>
+
+            <hr class="my-5" />
+
+            <!-- 3. Featured Music Video -->
+            <div class="mb-5">
+                <div class="text-center mb-3">
+                    <h3 class="fw-bold">Featured Video</h3>
+                    <p class="text-muted mb-0">Watch "When The Fear Hits" (Official Video)</p>
+                </div>
+
+                <!-- Responsive 16:9 Aspect Ratio Container -->
+                <div class="ratio ratio-16x9 shadow-sm rounded overflow-hidden">
+                    <iframe src="https://www.youtube-nocookie.com/embed/bynqSqrDkC4"
+                            title="Shadyside - When The Fear Hits (Official Video)"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <hr class="my-5" />
+
+            <!-- 4. Merch & Download Section -->
+            <div class="text-center bg-light p-4 rounded border shadow-sm mb-5">
+                <h4 class="fw-bold mb-2">Support the Band</h4>
+                <p class="text-muted mb-3">Pick up official merch and download upcoming releases directly from us.</p>
+                <a href="/Merch" class="btn btn-success btn-lg fw-bold shadow-sm">
+                    <i class="bi bi-bag-fill me-2"></i> Visit Merch & Store
+                </a>
+            </div>
+
         </div>
     </div>
 </div>
