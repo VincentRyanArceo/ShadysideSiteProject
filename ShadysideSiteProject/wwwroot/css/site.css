@@ -1,3 +1,19 @@
+body {
+    /* 1. Point to the background image */
+    background-image: url('/images/DrumsColour.jpg');
+    /* 2. Size image to cover the entire body */
+    background-size: cover;
+    /* 3. Keep the image centered */
+    background-position: center center;
+    /* 4. Keep background fixed */
+    background-attachment: fixed;
+    /* 5. Insert backup color for when image fails to load */
+    background-color: #1E201E;
+
+    /* 6. Text Default to white */
+    color: #ffffff;
+}
+
 html {
   font-size: 14px;
 }
