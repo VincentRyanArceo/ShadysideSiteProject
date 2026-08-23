@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\audio\" />
+    <Folder Include="wwwroot\downloads\" />
   </ItemGroup>
 
 </Project>
