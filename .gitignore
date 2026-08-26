@@ -427,3 +427,7 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Ignore large media and storefront bundles
+**/wwwroot/audio/
+**/wwwroot/downloads/
