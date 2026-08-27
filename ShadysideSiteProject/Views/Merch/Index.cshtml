@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ShadysideSiteProject.Models.MerchItem>
+
+@{
+    ViewData["Title"] = "Store & Merch";
+}
+
+<div class="container mt-5 text-white">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold">Official Store</h1>
+        <p class="lead text-light">Support the band with digital downloads and exclusive merch.</p>
+    </div>
+
+    <div class="row justify-content-center">
+        <!-- Loop through each item in our Controller's inventory -->
+        @foreach (var item in Model)
+        {
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card bg-dark border-secondary h-100 shadow-sm">
+
+                    <!-- Product Image -->
+                    @if (!string.IsNullOrEmpty(item.ImageUrl))
+                    {
+                        <img src="@item.ImageUrl" class="card-img-top p-3 rounded" alt="@item.Name">
+                    }
+
+                    <div class="card-body d-flex flex-column text-white">
+                        <h5 class="card-title fw-bold">@item.Name</h5>
+                        <p class="card-text text-light small">@item.Description</p>
+                        <h6 class="fw-bold text-success mb-3">$@item.Price.ToString("0.00")</h6>
+
+                        <!-- Audio Player for Digital Downloads -->
+                        @if (item.IsDigitalDownload && !string.IsNullOrEmpty(item.PreviewAudioPath))
+                        {
+                            <div class="mb-3">
+                                <span class="badge bg-secondary mb-2">Track Preview</span>
+                                <audio controls class="w-100" style="height: 40px;">
+                                    <source src="@item.PreviewAudioPath" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        }
+
+                        <!-- Action Button -->
+                        <div class="mt-auto">
+                            @if (item.IsDigitalDownload && !string.IsNullOrEmpty(item.DownloadUrl))
+                            {
+                                <!-- The 'download' attribute forces the browser to save the ZIP -->
+                                <a href="@item.DownloadUrl" download class="btn btn-success w-100 fw-bold shadow-sm">
+                                    <i class="bi bi-cloud-arrow-down-fill me-2"></i> Download EP
+                                </a>
+                            }
+                            else
+                            {
+                                <button class="btn btn-outline-light w-100 fw-bold shadow-sm">
+                                    <i class="bi bi-cart-plus me-2"></i> Add to Cart
+                                </button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

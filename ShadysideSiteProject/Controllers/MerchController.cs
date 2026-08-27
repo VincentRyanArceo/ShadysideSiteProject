@@ -12,14 +12,19 @@ namespace ShadysideSiteProject.Controllers
                 new MerchItem
                 {
                     ID = 1,
-                    Name = "Higher Plans EP (Digital Download",
+                    Name = "Higher Plans EP",
                     Description = "High-quality digital download of our latest release.",
                     Price = 5.00m,
                     ImageUrl = "/images/_Higher Plans Cover.jpg",
-                    IsDigitalDownload = true
+                    IsDigitalDownload = true,
+
+                    // Pointing exactly to the first track in the audio folder
+                    PreviewAudioPath = "/audio/01 When the Fear Hits.mp3",
+                    //Pointing to the MP3 zip file
+                    DownloadUrl = "/downloads/Shadyside - Higher Plans (MP3).zip"
                 }
             };
-            return View();
+            return View(storeItems);
         }
     }
 }
