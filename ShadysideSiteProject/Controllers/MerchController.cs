@@ -21,7 +21,7 @@ namespace ShadysideSiteProject.Controllers
                     // Pointing exactly to the first track in the audio folder
                     PreviewAudioPath = "/audio/01 When the Fear Hits.mp3",
                     //Pointing to the MP3 zip file
-                    DownloadUrl = "/downloads/Shadyside - Higher Plans (MP3).zip"
+                    DownloadUrl = "/downloads/Shadyside_HigherPlans(MP3Edition)"
                 }
             };
             return View(storeItems);
