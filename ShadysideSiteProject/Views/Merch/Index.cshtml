@@ -42,11 +42,16 @@
 
                         <!-- Action Button -->
                         <div class="mt-auto">
-                            @if (item.IsDigitalDownload && !string.IsNullOrEmpty(item.DownloadUrl))
+                            @if (!string.IsNullOrEmpty(item.Mp3DownloadUrl))
                             {
-                                <!-- The 'download' attribute forces the browser to save the ZIP -->
-                                <a href="@item.DownloadUrl" download class="btn btn-success w-100 fw-bold shadow-sm">
-                                    <i class="bi bi-cloud-arrow-down-fill me-2"></i> Download EP
+                                <a href="@item.Mp3DownloadUrl" download class="btn btn-success fw-bold shadow-sm">
+                                    <i class="bg-info bi-cloud-arrow-down-fill me-2"></i> Download MP3
+                                </a>
+                            }
+                            @if (!string.IsNullOrEmpty(item.WavDownloadUrl))
+                            {
+                                <a href="@item.WavDownloadUrl" download class="btn btn-outline-success fw-bold shadow-sm">
+                                    <i class="bi bi-cloud-arrow-down-fill me-2"></i> Download WAV
                                 </a>
                             }
                             else

@@ -11,6 +11,7 @@
         public string PreviewAudioPath { get; set; } = string.Empty;
 
         // New property to hold the ZIP files
-        public string DownloadUrl { get; set; } = string.Empty;
+        public string Mp3DownloadUrl { get; set; } = string.Empty;
+        public string WavDownloadUrl { get; set; } = string.Empty;
     }
 }
