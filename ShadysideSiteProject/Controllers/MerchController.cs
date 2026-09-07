@@ -20,9 +20,9 @@ namespace ShadysideSiteProject.Controllers
 
                     // Pointing exactly to the first track in the audio folder
                     PreviewAudioPath = "/audio/03 When In The Wars.mp3",
-                    //Pointing to the MP3 zip file
-                    Mp3DownloadUrl = "/downloads/Shadyside_HigherPlans(MP3Edition).zip",
-                    WavDownloadUrl = "/downloads/Shadyside_HigherPlans(WAVEdition).zip"
+                    //Pointing to the MP3/WAV zip file
+                    Mp3DownloadUrl = "/downloads/Shadyside_HigherPlans_MP3Edition.zip",
+                    WavDownloadUrl = "/downloads/Shadyside_HigherPlans_WAVEdition.zip"
                 }
             };
             return View(storeItems);

@@ -42,22 +42,27 @@
 
                         <!-- Action Button -->
                         <div class="mt-auto">
-                            @if (!string.IsNullOrEmpty(item.Mp3DownloadUrl))
+                            @if (item.IsDigitalDownload)
                             {
-                                <a href="@item.Mp3DownloadUrl" download class="btn btn-success fw-bold shadow-sm">
-                                    <i class="bg-info bi-cloud-arrow-down-fill me-2"></i> Download MP3
-                                </a>
-                            }
-                            @if (!string.IsNullOrEmpty(item.WavDownloadUrl))
-                            {
-                                <a href="@item.WavDownloadUrl" download class="btn btn-outline-success fw-bold shadow-sm">
-                                    <i class="bi bi-cloud-arrow-down-fill me-2"></i> Download WAV
-                                </a>
+                                <div class="d-grid gap-2">
+                                    @if (!string.IsNullOrEmpty(item.Mp3DownloadUrl))
+                                    {
+                                        <a href="@item.Mp3DownloadUrl" download class="btn btn-success fw-bold shadow-sm">
+                                            <i class="bg-info bi-cloud-arrow-down-fill me-2"></i> Download MP3
+                                        </a>
+                                    }
+                                    @if (!string.IsNullOrEmpty(item.WavDownloadUrl))
+                                    {
+                                        <a href="@item.WavDownloadUrl" download class="btn btn-outline-success fw-bold shadow-sm">
+                                            <i class="bg bi-cloud-arrow-down-fill me-2"></i> Download WAV
+                                        </a>
+                                    } 
+                                </div>
                             }
                             else
                             {
                                 <button class="btn btn-outline-light w-100 fw-bold shadow-sm">
-                                    <i class="bi bi-cart-plus me-2"></i> Add to Cart
+                                 <i class="bg bi-cart-plus me-2"></i> Add to Cart 
                                 </button>
                             }
                         </div>
