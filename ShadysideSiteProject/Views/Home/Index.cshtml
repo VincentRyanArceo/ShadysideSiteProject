@@ -2,7 +2,147 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- SECTION 1: Carousel Hero -->
+<div id="bandCarousel" class="carousel slide position-relative shadow-lg" data-bs-ride="carousel">
+
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/images/BackPorch.jpg" class="d-block w-100" style="height: 700px; object-fit: cover; filter: brightness(40%);" alt="Band on the back porch">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/ChipLive.jpg" class="d-block w-100" style="height: 700px; object-fit: cover; filter: brightness(40%);" alt="Chip playing live">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/MichaelWendellLive.jpg" class="d-block w-100" style="height: 700px; object-fit: cover; filter: brightness(40%);" alt="Michael and Wendell live">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/RooftopPizzaSmoke.jpg" class="d-block w-100" style="height: 700px; object-fit: cover; filter: brightness(40%);" alt="Band hanging out on rooftop">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/WideShotLive.jpg" class="d-block w-100" style="height: 700px; object-fit: cover; filter: brightness(40%);" alt="Wide shot of live performance">
+        </div>
+    </div>
+
+    <!-- Shortened Overlay for the Carousel -->
+    <div class="position-absolute top-50 start-50 translate-middle text-center text-white" style="z-index: 10; width: 80%;">
+        <h1 class="display-1 fw-bold mb-3">SHADYSIDE</h1>
+        <p class="lead fw-normal mx-auto mb-4" style="max-width: 700px; font-size: 1.5rem;">
+            The future is unwritten... but the band clearly has higher plans.
+        </p>
+        <div>
+            <a href="/Merch" class="btn btn-success btn-lg fw-bold shadow-sm">
+                <i class="bi bi-music-note-beamed me-2"></i> Get the New EP
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#bandCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#bandCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
+
+<!-- SECTION 2: Band Biography -->
+<div class="container my-5 text-light">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h2 class="fw-bold mb-4 border-bottom border-secondary pb-2">About Shadyside</h2>
+
+            <p class="mb-3" style="font-size: 1.1rem; line-height: 1.8;">
+                What's that saying about loving something and setting it free, and it coming back later? Well, in mid '00s, Ohio's Shadyside set vocalist Michael Malarkey free to pursue studies at a prestigious London acting school. After two decades and a wildly successful stage and television career (Vampire Diaries, Law and Order: Organized Crime, Westworld, Project Bluebook, etc.), he returned.
+            </p>
+
+            <p class="mb-3" style="font-size: 1.1rem; line-height: 1.8;">
+                Formed in 1999, Shadyside cut a few demo tracks and some rough EPs while fleshing out their core lineup before adding Malarkey to the group in 2003. With their new vocalist secured, the band (rounded out by Vincent-Ryan Arceo on bass, Dave Brandenburg on drums, Adrian Grant on keys & guitar, Charles Heck on guitar & vocals, and Wendell Hensley on guitar & vocals) began to develop some momentum with a new EP that featured a more polishedThis is a fantastic, well-written bio that tells a great story about the band's history and reunion.
+
+                From a web development and UI/UX (User Interface/User Experience) perspective, placing a massive three-paragraph block of text directly over a sliding image carousel will make it very difficult to read on smaller screens like mobile phones.
+
+                ### Overview of the Solution
+
+                To make your Home page look incredibly professional, we are going to split this content into two distinct sections:
+
+                1.  **The Hook (Carousel Overlay):** We will extract a short, punchy, one-sentence summary from your text to serve as the hero text over the sliding images. This keeps the carousel clean and draws the user in.
+                2.  **The Story (New Bio Section):** We will create a brand new HTML container right below the carousel dedicated to the full bio. I have slightly paraphrased the text you provided to optimize it for web readability, while ensuring the history—from the early Ohio days to locking in the groove on bass and drums, all the way to the Reel Love Recording sessions—remains completely intact.
+
+                ### Implementation Instructions: Updating the Home Page
+
+                1. Open **`Views/Home/Index.cshtml`**.
+                2. Replace the entire file with this updated code. It includes your 5-image carousel from our last session, the new punchy overlay text, and the dedicated bio section below it.
+
+                ```html
+                @{
+                    ViewData["Title"] = "Home Page";
+                }
+
+                <!-- Carousel Container -->
+                <div id="bandCarousel" class="carousel slide position-relative shadow-lg" data-bs-ride="carousel">
+
+                    <!-- The Images (Slides) -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/images/BackPorch.jpg" class="d-block w-100" style="height: 700px; object-fit: cover; filter: brightness(40%);" alt="Band on the back porch">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/images/ChipLive.jpg" class="d-block w-100" style="height: 700px; object-fit: cover; filter: brightness(40%);" alt="Chip playing live">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/images/MichaelWendellLive.jpg" class="d-block w-100" style="height: 700px; object-fit: cover; filter: brightness(40%);" alt="Michael and Wendell live">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/images/RooftopPizzaSmoke.jpg" class="d-block w-100" style="height: 700px; object-fit: cover; filter: brightness(40%);" alt="Band hanging out on rooftop">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/images/WideShotLive.jpg" class="d-block w-100" style="height: 700px; object-fit: cover; filter: brightness(40%);" alt="Wide shot of live performance">
+                        </div>
+                    </div>
+
+                    <!-- The Hero Overlay (Punchy Hook) -->
+                    <div class="position-absolute top-50 start-50 translate-middle text-center text-white" style="z-index: 10; width: 80%;">
+                        <h1 class="display-2 fw-bold mb-4">SHADYSIDE</h1>
+                        <p class="lead fw-normal mx-auto" style="max-width: 700px; font-size: 1.25rem;">
+                            Formed in Ohio. Reunited after two decades. The future is unwritten, but we clearly have higher plans.
+                        </p>
+                        <div class="mt-4">
+                            <!-- Quick link to the Merch page -->
+                            <a href="/Merch" class="btn btn-success btn-lg fw-bold shadow">
+                                <i class="bi bi-music-note-beamed me-2"></i> Get the New EP
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#bandCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#bandCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+                <!-- Full Bio Section -->
+                <div class="container my-5 py-5 text-white">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-lg-8 text-center">
+                            <h2 class="display-5 fw-bold mb-4">Our Story</h2>
+
+                            <p class="lead text-light mb-4">
+                                Originating in Ohio in 1999, Shadyside spent their early years cutting demos and solidifying their core lineup before vocalist Michael Malarkey joined the fold in 2003. Although momentum paused when Malarkey moved to London to pursue a successful acting career, the friendships endured.
+                            </p>
+
+                            <p class="text-light mb-4" style="font-size: 1.1rem;">
+                                Anchored by a tight rhythm section on bass and drums, alongside dynamic keys and guitars, the band made a pact in 2017 to create music together again. The 2020 pandemic provided the ultimate opportunity to finally make good on that promise.
+                            </p>
+
+                            <p class="text-light" style="font-size: 1.1rem;">
+                                Those lockdown sessions became the foundation for the <em>Higher Plans</em> EP. Recorded by Pat Himes at Reel Love Recording Studio and mixed/mastered by Grammy-nominated producer Jack Shirley at Atomic Garden Studios, these new tracks remind us that while the future remains unwritten... the band clearly has higher plans.
+                            </p>
+                        </div>
+                    </div>
+                </div>
