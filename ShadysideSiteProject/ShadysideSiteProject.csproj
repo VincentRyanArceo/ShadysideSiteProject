@@ -7,8 +7,4 @@
     <UserSecretsId>1e500d3d-37db-4fde-b170-872e1a68dec1</UserSecretsId>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\audio\" />
-  </ItemGroup>
-
 </Project>
