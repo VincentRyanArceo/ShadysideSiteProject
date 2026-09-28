@@ -36,3 +36,30 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/* Navigation Card Base - ensures the animation is smooth */
+.nav-card {
+    transition: all 0.3s ease-in-out;
+}
+
+    /* Navigation Card Hover - lifts the card and adds a purple glow */
+    .nav-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(168, 85, 247, 0.25) !important;
+        border-color: #a855f7 !important;
+    }
+
+/* Custom Purple Button */
+.btn-purple {
+    background-color: #a855f7;
+    border-color: #a855f7;
+    color: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+    .btn-purple:hover,
+    .btn-purple:focus {
+        background-color: #9333ea; /* Slightly darker purple for hover */
+        border-color: #9333ea;
+        color: #ffffff;
+    }

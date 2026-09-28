@@ -4,6 +4,11 @@
     ViewData["Title"] = "Store & Merch";
 }
 
+<!-- Include Bootstrap Icons CDN for platform icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<div class="container mt-5 text-white">
+
 <div class="container mt-5 text-white">
     <div class="text-center mb-5">
         <h1 class="display-4 fw-bold">Official Store</h1>
@@ -48,7 +53,7 @@
                             <div class="d-grid gap-2">
                                 @if (!string.IsNullOrEmpty(item.Mp3DownloadUrl))
                                 {
-                                    <a href="@item.Mp3DownloadUrl" download class="btn btn-success fw-bold shadow-sm">
+                                    <a href="@item.Mp3DownloadUrl" download class="btn btn-purple fw-bold shadow-sm">
                                         <i class="bi bi-cloud-arrow-down-fill me-2"></i> Download MP3
                                     </a>
                                 }
@@ -93,7 +98,7 @@
         <!-- Home Card -->
         <div class="col-md-5">
             <a href="/" class="text-decoration-none">
-                <div class="card bg-dark bg-opacity-75 border-secondary text-white h-100 text-center p-4 shadow-sm" style="backdrop-filter: blur(8px);">
+                <div class="card nav-card bg-dark bg-opacity-75 border-secondary text-white h-100 text-center p-4 shadow-sm" style="backdrop-filter: blur(8px);">
                     <i class="bi bi-house-door display-4 mb-3" style="color: #a855f7;"></i>
                     <h3 class="h4 fw-bold">Home</h3>
                     <p class="text-light small mb-0">Return to the homepage to read the band bio and latest news.</p>
@@ -104,7 +109,7 @@
         <!-- Music & Media Card -->
         <div class="col-md-5">
             <a href="/Music" class="text-decoration-none">
-                <div class="card bg-dark bg-opacity-75 border-secondary text-white h-100 text-center p-4 shadow-sm" style="backdrop-filter: blur(8px);">
+                <div class="card nav-card bg-dark bg-opacity-75 border-secondary text-white h-100 text-center p-4 shadow-sm" style="backdrop-filter: blur(8px);">
                     <i class="bi bi-play-circle display-4 mb-3" style="color: #a855f7;"></i>
                     <h3 class="h4 fw-bold">Music & Media</h3>
                     <p class="text-light small mb-0">Stream our music, view photos, and find upcoming show dates.</p>
