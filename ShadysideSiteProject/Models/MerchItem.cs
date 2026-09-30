@@ -8,10 +8,11 @@
         public decimal Price { get; set; }
         public string ImageUrl { get; set; } = string.Empty;
         public bool IsDigitalDownload { get; set; }
-        public string PreviewAudioPath { get; set; } = string.Empty;
 
-        // New property to hold the ZIP files
+        // New property to categorize releases
+        public bool IsNewRelease { get; set; }
+
+        public string PreviewAudioPath { get; set; } = string.Empty;
         public string Mp3DownloadUrl { get; set; } = string.Empty;
-        public string WavDownloadUrl { get; set; } = string.Empty;
     }
 }

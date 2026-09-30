@@ -34,19 +34,69 @@ namespace ShadysideSiteProject.Controllers
             Price = 12.50m,
             ImageUrl = "/images/FlyOnGlass.jpeg",
             IsDigitalDownload = true,
+            IsNewRelease = true,
             PreviewAudioPath = "/audio/03 The End of Everything.mp3",
             Mp3DownloadUrl = "/downloads/_PlaceHolder.zip"
         },
         new MerchItem
         {
             ID = 2,
-            Name = "Higher Plans EP",
+            Name = "Higher Plans",
             Description = "Digital download of our Higher Plans EP.",
             Price = 5.00m,
             ImageUrl = "/images/_HigherPlansCover.jpg",
             IsDigitalDownload = true,
+            IsNewRelease = true,
             PreviewAudioPath = "/audio/03 When In the Wars.mp3",
             Mp3DownloadUrl = "/downloads/Shadyside_HigherPlans_MP3Edition.zip"
+        },
+        new MerchItem
+        {
+            ID = 3,
+            Name = "Later In The Past",
+            Description = "Classic digital download.",
+            Price = 5.00m,
+            ImageUrl = "/images/LaterInThePast_CoverImage.jpg",
+            IsDigitalDownload = true,
+            IsNewRelease = false, // Flagged as Classic
+            PreviewAudioPath = "/audio/02 as two fallen stars.mp3",
+            Mp3DownloadUrl = "/downloads/LaterInThePast.zip"
+        },
+        new MerchItem
+        {
+            ID = 4,
+            Name = "thefairbornohioband",
+            Description = "Early years of Shadyside",
+            Price = 3.00m,
+            ImageUrl = "/images/TheFairibornOhioBand_Image.jpg",
+            IsDigitalDownload = true,
+            IsNewRelease = false,
+            PreviewAudioPath = "/audio/05 glass hearts tend to break.mp3",
+            Mp3DownloadUrl = "/downloads/TheFairbornOhioBand.zip"
+        },
+        new MerchItem
+        {
+            ID = 5,
+            Name = "The Analog Sessions",
+            Description = "Unreleased tracks",
+            Price = 3.00m,
+            ImageUrl = "/images/TheAnalogSessions_CoverImage.jpg",
+            IsDigitalDownload = true,
+            IsNewRelease = false,
+            PreviewAudioPath = "/audio/01 ambulance.mp3",
+            Mp3DownloadUrl = "/downloads/TheAnalogSessions.zip"
+        },
+        new MerchItem
+        {
+            ID = 6,
+            Name = "...59",
+            Description = "The Fianl EP Demos",
+            Price = 3.00m,
+            ImageUrl = "/images/_59_CoverImage.jpg",
+            IsDigitalDownload = true,
+            IsNewRelease = false,
+            PreviewAudioPath = "/audio/02 cest le vin, stupide.mp3",
+            Mp3DownloadUrl = "/downloads/_59.zip"
         }
     };
 
