@@ -1,65 +1,31 @@
-body {
-    /* 1. Point to the background image */
-    background-image: url('/images/DrumsColour.jpg');
-    /* 2. Size image to cover the entire body */
-    background-size: cover;
-    /* 3. Keep the image centered */
-    background-position: center center;
-    /* 4. Keep background fixed */
-    background-attachment: fixed;
-    /* 5. Insert backup color for when image fails to load */
-    background-color: #1E201E;
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EntryPointFilePath = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ShadysideSiteProject
+build_property.RootNamespace = ShadysideSiteProject
+build_property.ProjectDir = D:\Repositories\Projects\ShadysideSiteProject\ShadysideSiteProject\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Repositories\Projects\ShadysideSiteProject\ShadysideSiteProject
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
-    /* 6. Text Default to white */
-    color: #ffffff;
-}
+[D:/Repositories/Projects/ShadysideSiteProject/ShadysideSiteProject/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
 
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
-}
-
-/* Navigation Card Base - ensures the animation is smooth */
-.nav-card {
-    transition: all 0.3s ease-in-out;
-}
-
-    /* Navigation Card Hover - lifts the card and adds a purple glow */
-    .nav-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 10px 20px rgba(168, 85, 247, 0.25) !important;
-        border-color: #a855f7 !important;
-    }
-
-/* Custom Purple Button */
-.btn-purple {
-    background-color: #a855f7;
-    border-color: #a855f7;
-    color: #ffffff;
-    transition: all 0.3s ease-in-out;
-}
-
-    .btn-purple:hover,
-    .btn-purple:focus {
-        background-color: #9333ea; /* Slightly darker purple for hover */
-        border-color: #9333ea;
-        color: #ffffff;
-    }
+[D:/Repositories/Projects/ShadysideSiteProject/ShadysideSiteProject/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3
